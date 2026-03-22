@@ -1,8 +1,3 @@
-/* ============================================================================
-   theme_gruvbox.css — Gruvbox Dark syntax theme for Silicon doc-gen
-   To swap themes: update "theme_css" in config.json paths to this filename.
-   ========================================================================== */
-
 :root {
     --m-bg:     #282828;
     --m-fg:     #ebdbb2;

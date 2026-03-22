@@ -1,8 +1,3 @@
-/* ============================================================================
-   theme_dracula.css — Dracula syntax theme for Silicon doc-gen
-   To swap themes: update "theme_css" in config.json paths to this filename.
-   ========================================================================== */
-
 :root {
     --m-bg:     #282a36;
     --m-fg:     #f8f8f2;

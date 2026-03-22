@@ -1,10 +1,3 @@
-/* ============================================================================
-   theme_monokai.css — Monokai syntax theme for Silicon doc-gen
-   To swap themes: create a new theme_*.css with the same variable names
-   and update the <link> in config.json.
-   ========================================================================== */
-
-/* ── Dark (default) ──────────────────────────────────────────────────────── */
 :root {
     --m-bg:     #272822;
     --m-fg:     #f8f8f2;

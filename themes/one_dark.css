@@ -1,9 +1,3 @@
-/* ============================================================================
-   theme_one_dark_pro.css — One Dark Pro syntax theme for Silicon doc-gen
-   To swap themes: update "theme_css" in config.json paths to this filename.
-   ========================================================================== */
-
-/* ── Dark (default) ──────────────────────────────────────────────────────── */
 :root {
     --m-bg:     #282c34;
     --m-fg:     #abb2bf;

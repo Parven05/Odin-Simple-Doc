@@ -1,23 +1,3 @@
-"""
-gen.py — Silicon doc generator
-Reads config.json and odin_syntax.json, parses Odin source, emits index.html.
-
-CSS is handled by two static files committed to the repo:
-  style.css          — layout, sidebar, UI colours
-  theme_monokai.css  — Monokai syntax colours and token rules
-
-To swap themes: create a new theme_*.css and update the <link> in template.html.
-
-File ordering: define "file_order" in config.json as a list of filenames
-(e.g. ["window.odin", "renderer.odin"]). Files not listed sort alphabetically
-after the listed ones.
-
-Doc comments: place // or /* */ comments directly above a declaration (no
-blank line gap) and they will appear as a readable description in the docs.
-Comments separated by a blank line or inside the body are ignored.
-Doc comments are stripped from the code block — they appear as text only.
-"""
-
 import json
 import re
 import textwrap
@@ -46,9 +26,6 @@ OUTPUT_HTML   = BASE_DIR / CFG["paths"]["output_html"]
 TEMPLATE_PATH = BASE_DIR / CFG["paths"]["template"]
 SORT_ORDER    = CFG["sort_order"]
 PROJ          = CFG["project"]
-
-# Build a filename -> index lookup from config.json "file_order" list.
-# Files not listed get index 999_999 and fall back to alphabetical sorting.
 FILE_ORDER = {name: i for i, name in enumerate(CFG.get("file_order", []))}
 
 

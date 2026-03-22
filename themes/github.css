@@ -1,9 +1,3 @@
-/* ============================================================================
-   theme_github_dark.css — GitHub Dark syntax theme for Silicon doc-gen
-   To swap themes: update "theme_css" in config.json paths to this filename.
-   ========================================================================== */
-
-/* ── Dark (default) ──────────────────────────────────────────────────────── */
 :root {
     --m-bg:     #0d1117;
     --m-fg:     #c9d1d9;
