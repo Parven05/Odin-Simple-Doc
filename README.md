@@ -1,6 +1,6 @@
 # Odin Doc-Gen
 
-A simple documentation generator for [Odin](https://odin-lang.org/) source code. Point it at your `src/` folder, run one command, get a single self-contained `index.html` with a searchable, filterable API reference.
+A simple documentation generator for [Odin](https://odin-lang.org/) projects. Point it at your `src/` folder, run one command, get a single self-contained `index.html` with a searchable, filterable API reference.
 
 ## Requirements
 
