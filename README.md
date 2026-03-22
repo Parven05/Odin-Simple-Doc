@@ -35,6 +35,8 @@ Open `index.html` in your browser. No server needed.
 
 You must create this file yourself — `gen.py` will not run without it. Place it in the same folder as `gen.py`.
 
+Example :
+
 ```json
 {
     "project": {
