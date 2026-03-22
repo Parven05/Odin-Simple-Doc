@@ -1,0 +1,36 @@
+{
+    "_comment": "Silicon doc-gen — edit this file to customise the site.",
+    "project": {
+        "name": "Silicon",
+        "subtitle": "an OpenGL Renderer",
+        "tagline": "Library Overview",
+        "github_url": "https://github.com/Parven05/Silicon",
+        "page_title": "Silicon Documentation"
+    },
+    "paths": {
+        "source_dir": "../src",
+        "output_html": "index.html",
+        "template": "template.html",
+        "syntax": "odin_syntax.json",
+        "style_css": "style.css",
+        "theme_css": "themes/monokai.css"
+    },
+    "sort_order": {
+        "STRUCT": 1,
+        "ENUM": 2,
+        "PROC": 3,
+        "UNION": 4
+    },
+    "file_order": [
+        "main.odin",
+        "engine.odin",
+        "window.odin",
+        "shader.odin",
+        "texture.odin",
+        "buffers.odin",
+        "camera.odin",
+        "input.odin",
+        "transform.odin",
+        "ui.odin"
+    ]
+}

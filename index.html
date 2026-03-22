@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silicon Documentation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes/monokai.css">
+</head>
+<body>
+
+<script id="toc-data"  type="application/json">{"main.odin": [{"id": "main-odin--main", "name": "main", "cat": "PROC"}], "engine.odin": [{"id": "engine-odin--clear_window", "name": "clear_window", "cat": "PROC"}, {"id": "engine-odin--delete_engine", "name": "delete_engine", "cat": "PROC"}, {"id": "engine-odin--enable_feature", "name": "enable_feature", "cat": "PROC"}, {"id": "engine-odin--init_engine", "name": "init_engine", "cat": "PROC"}, {"id": "engine-odin--post_render_engine", "name": "post_render_engine", "cat": "PROC"}, {"id": "engine-odin--pre_render_engine", "name": "pre_render_engine", "cat": "PROC"}, {"id": "engine-odin--process_input", "name": "process_input", "cat": "PROC"}, {"id": "engine-odin--render_engine", "name": "render_engine", "cat": "PROC"}, {"id": "engine-odin--run_engine", "name": "run_engine", "cat": "PROC"}, {"id": "engine-odin--set_glfw_callback", "name": "set_glfw_callback", "cat": "PROC"}], "window.odin": [{"id": "window-odin--delete_window", "name": "delete_window", "cat": "PROC"}, {"id": "window-odin--fb_size_callback", "name": "fb_size_callback", "cat": "PROC"}, {"id": "window-odin--init_window", "name": "init_window", "cat": "PROC"}, {"id": "window-odin--set_current_window_size", "name": "set_current_window_size", "cat": "PROC"}, {"id": "window-odin--set_deltatime", "name": "set_deltatime", "cat": "PROC"}, {"id": "window-odin--swap_buffer_window", "name": "swap_buffer_window", "cat": "PROC"}, {"id": "window-odin--window_close", "name": "window_close", "cat": "PROC"}], "shader.odin": [{"id": "shader-odin--Shader", "name": "Shader", "cat": "STRUCT"}, {"id": "shader-odin--init_shader", "name": "init_shader", "cat": "PROC"}, {"id": "shader-odin--set_uniform", "name": "set_uniform", "cat": "PROC"}, {"id": "shader-odin--use_shader", "name": "use_shader", "cat": "PROC"}], "texture.odin": [{"id": "texture-odin--Texture", "name": "Texture", "cat": "STRUCT"}, {"id": "texture-odin--activate_texture", "name": "activate_texture", "cat": "PROC"}, {"id": "texture-odin--bind_texture", "name": "bind_texture", "cat": "PROC"}, {"id": "texture-odin--init_texture", "name": "init_texture", "cat": "PROC"}, {"id": "texture-odin--load_texture", "name": "load_texture", "cat": "PROC"}], "buffers.odin": [{"id": "buffers-odin--EBO", "name": "EBO", "cat": "STRUCT"}, {"id": "buffers-odin--VAO", "name": "VAO", "cat": "STRUCT"}, {"id": "buffers-odin--VBO", "name": "VBO", "cat": "STRUCT"}, {"id": "buffers-odin--bind_EBO", "name": "bind_EBO", "cat": "PROC"}, {"id": "buffers-odin--bind_VAO", "name": "bind_VAO", "cat": "PROC"}, {"id": "buffers-odin--bind_VBO", "name": "bind_VBO", "cat": "PROC"}, {"id": "buffers-odin--create_EBO", "name": "create_EBO", "cat": "PROC"}, {"id": "buffers-odin--create_VAO", "name": "create_VAO", "cat": "PROC"}, {"id": "buffers-odin--create_VBO", "name": "create_VBO", "cat": "PROC"}, {"id": "buffers-odin--delete_EBO", "name": "delete_EBO", "cat": "PROC"}, {"id": "buffers-odin--delete_VAO", "name": "delete_VAO", "cat": "PROC"}, {"id": "buffers-odin--delete_VBO", "name": "delete_VBO", "cat": "PROC"}, {"id": "buffers-odin--link_attrib", "name": "link_attrib", "cat": "PROC"}], "camera.odin": [{"id": "camera-odin--Camera", "name": "Camera", "cat": "STRUCT"}, {"id": "camera-odin--Camera_mode", "name": "Camera_mode", "cat": "ENUM"}, {"id": "camera-odin--get_camera_mode", "name": "get_camera_mode", "cat": "PROC"}, {"id": "camera-odin--get_camera_view", "name": "get_camera_view", "cat": "PROC"}, {"id": "camera-odin--init_camera", "name": "init_camera", "cat": "PROC"}], "input.odin": [{"id": "input-odin--close_window", "name": "close_window", "cat": "PROC"}, {"id": "input-odin--mouse_callback", "name": "mouse_callback", "cat": "PROC"}, {"id": "input-odin--mouse_scroll_callback", "name": "mouse_scroll_callback", "cat": "PROC"}, {"id": "input-odin--move_camera", "name": "move_camera", "cat": "PROC"}, {"id": "input-odin--reset_camera", "name": "reset_camera", "cat": "PROC"}, {"id": "input-odin--set_input_mode", "name": "set_input_mode", "cat": "PROC"}], "transform.odin": [{"id": "transform-odin--Transform", "name": "Transform", "cat": "STRUCT"}, {"id": "transform-odin--apply_transform", "name": "apply_transform", "cat": "PROC"}, {"id": "transform-odin--init_transform", "name": "init_transform", "cat": "PROC"}, {"id": "transform-odin--move", "name": "move", "cat": "PROC"}, {"id": "transform-odin--rotate", "name": "rotate", "cat": "PROC"}, {"id": "transform-odin--scale", "name": "scale", "cat": "PROC"}], "ui.odin": [{"id": "ui-odin--delete_ui", "name": "delete_ui", "cat": "PROC"}, {"id": "ui-odin--draw_f32_colored_ui", "name": "draw_f32_colored_ui", "cat": "PROC"}, {"id": "ui-odin--draw_status_bottom_bar_ui", "name": "draw_status_bottom_bar_ui", "cat": "PROC"}, {"id": "ui-odin--draw_vec2_colored_ui", "name": "draw_vec2_colored_ui", "cat": "PROC"}, {"id": "ui-odin--draw_vec3_colored_ui", "name": "draw_vec3_colored_ui", "cat": "PROC"}, {"id": "ui-odin--init_ui", "name": "init_ui", "cat": "PROC"}, {"id": "ui-odin--pre_render_ui", "name": "pre_render_ui", "cat": "PROC"}, {"id": "ui-odin--render_ui", "name": "render_ui", "cat": "PROC"}]}</script>
+<script id="meta-data" type="application/json">{"item_count":65,"generated_at":"March 22, 2026 at 11:30 UTC"}</script>
+
+<aside id="sidebar">
+    <div id="sidebar-header">
+        <span id="sidebar-title">Silicon</span>
+        <span id="sidebar-count"></span>
+        <div id="sidebar-header-btns">
+            <button id="sb-expand-all"   title="Expand all groups">&#8862;</button>
+            <button id="sb-collapse-all" title="Collapse all groups">&#8863;</button>
+        </div>
+    </div>
+    <div id="sidebar-content"></div>
+    <div id="sidebar-footer">Generated <span id="gen-time"></span></div>
+</aside>
+
+<div id="sidebar-resize" title="Drag to resize sidebar"></div>
+
+<main id="main">
+    <header>
+        <div id="header-left">
+            <button id="sidebar-toggle" class="icon-btn" title="Toggle sidebar (S)">&#9776;</button>
+            <div>
+                <div id="title-row">
+                    <h1>Silicon <span id="title-sub">an OpenGL Renderer</span></h1>
+                    <a id="github-link" href="https://github.com/Parven05/Silicon" target="_blank" rel="noopener" title="View on GitHub">
+                        <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    </a>
+                </div>
+                <div class="tagline">Library Overview</div>
+            </div>
+        </div>
+    </header>
+
+    <div id="toolbar">
+        <input type="text" id="search" placeholder="Filter by name..." autocomplete="off" spellcheck="false">
+        <div id="filter-btns">
+            <button class="filter-btn active" data-cat="ALL">All <span class="filter-count"></span></button>
+            <button class="filter-btn" data-cat="STRUCT" style="--btn-color:var(--badge-struct-fg)">Struct <span class="filter-count"></span></button>
+            <button class="filter-btn" data-cat="ENUM"   style="--btn-color:var(--badge-enum-fg)">Enum <span class="filter-count"></span></button>
+            <button class="filter-btn" data-cat="PROC"   style="--btn-color:var(--badge-proc-fg)">Proc <span class="filter-count"></span></button>
+            <button class="filter-btn" data-cat="UNION"  style="--btn-color:var(--badge-union-fg)">Union <span class="filter-count"></span></button>
+        </div>
+        <div id="toolbar-right">
+            <button id="back-btn"     title="Go back (Alt+Left)" disabled>&#8592;</button>
+            <button id="expand-all"   title="Expand all">&#8862;</button>
+            <button id="collapse-all" title="Collapse all">&#8863;</button>
+        </div>
+    </div>
+
+    <div id="api-root"><div class='file-section' id='sec-main-odin'><div class='file-header' data-pkg='main.odin'>main<span class='file-sym-count'>1</span></div>
+        <details id='main-odin--main'>
+            <summary><span class='item-name'>main</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='content'><div class='code-header'><span class='code-file'>main.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>main :: proc() {
+	run_engine()
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-engine-odin'><div class='file-header' data-pkg='engine.odin'>engine<span class='file-sym-count'>10</span></div>
+        <details id='engine-odin--clear_window'>
+            <summary><span class='item-name'>clear_window</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>clear_window :: proc() {
+	gl.ClearColor(0.20, 0.20, 0.20, 1.0)
+	gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--delete_engine'>
+            <summary><span class='item-name'>delete_engine</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>delete_engine :: proc() {
+	delete_VBO(&amp;vbo)
+	delete_VAO(&amp;vao)
+	delete_window()
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--enable_feature'>
+            <summary><span class='item-name'>enable_feature</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>cap</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>enable_feature :: proc(cap: u32)  {
+	gl.Enable(cap)
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--init_engine'>
+            <summary><span class='item-name'>init_engine</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>init_engine :: proc() {
+	context.logger = log.create_console_logger()
+
+	// setup window
+	SUCCESS = init_window(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE)
+	if !SUCCESS {
+		log.error(&quot;Failed to initialize window&quot;)
+	} else {
+		log.info(&quot;Window initialized successfully&quot;)
+	}
+
+	// setup shader
+	shader, SUCCESS = init_shader(VERTEX_PATH, FRAGMENT_PATH)
+	if !SUCCESS {
+		log.error(&quot;Failed to compile shader file&quot;)
+		return
+	} else {
+		log.info(&quot;Shader file compiled successfully&quot;)
+	}
+
+	// setup config
+	enable_feature(gl.DEPTH_TEST)
+	set_input_mode()
+	set_glfw_callback()
+
+	// setup texture
+	texture_01 = init_texture(gl.TEXTURE_2D, gl.REPEAT, gl.LINEAR_MIPMAP_LINEAR, gl.LINEAR)
+	SUCCESS = load_texture(TEXTURE_PATH_01, gl.TEXTURE_2D, gl.RGB, gl.RGB)
+	if !SUCCESS {
+		log.errorf(&quot;Failed to load texture: %v&quot;, texture_01.id)
+	} else {
+		log.infof(&quot;Texture loaded successfully: %v&quot;, texture_01.id)
+	}
+
+	// setup buffers
+	vao, SUCCESS = create_VAO()
+	if !SUCCESS {
+		log.errorf(&quot;Failed to create vertex array object: %v&quot;, vao.id)
+	} else {
+		log.infof(&quot;Vertex array object created successfully: %v&quot;, vao.id)
+	}
+
+	vbo, SUCCESS = create_VBO()
+	if !SUCCESS {
+		log.errorf(&quot;Failed to create vertex buffer object: %v&quot;, vbo.id)
+	} else {
+		log.infof(&quot;Vertex buffer object created successfully: %v&quot;, vbo.id)
+	}
+
+	// bind buffers
+ 	SUCCESS = bind_VAO(&amp;vao)
+  	if !SUCCESS {
+ 		log.errorf(&quot;Failed to bind vertex array object: %v&quot;, vao.id)
+   } else {
+   		log.infof(&quot;Vertex array object binded successfully: %v&quot;, vao.id)
+   }
+
+  	SUCCESS = bind_VBO(&amp;vbo, cube_vertices, gl.STATIC_DRAW)
+   	if !SUCCESS {
+  		log.errorf(&quot;Failed to bind vertex buffer object: %v&quot;, vbo.id)
+    } else {
+    		log.infof(&quot;Vertex buffer object binded successfully: %v&quot;, vbo.id)
+    }
+
+	// link buffers
+	// position attribute
+	stride : i32 = 5
+	SUCCESS = link_attrib(0, 3, stride, 0)
+	if !SUCCESS {
+		log.errorf(&quot;Failed to link attributes to vertex array object: %v&quot;, vao.id)
+	} else {
+		log.infof(&quot;Linked attributes to vertex array object successfully: %v&quot;, vao.id)
+	}
+
+	// texture attribute
+	SUCCESS = link_attrib(1, 2, stride, 3)
+	if !SUCCESS {
+		log.errorf(&quot;Failed to link attributes to vertex array object: %v&quot;, vao.id)
+	} else {
+		log.infof(&quot;Linked attributes to vertex array object successfully: %v&quot;, vao.id)
+	}
+
+	// setup camera
+	SUCCESS = init_camera(&amp;camera)
+	if !SUCCESS {
+		log.error(&quot;Failed to initialize camera&quot;)
+	} else {
+		log.info(&quot;Camera initialize successfully&quot;)
+	}
+
+	camera.aspect_ratio = {f32(WINDOW_WIDTH), f32(WINDOW_HEIGHT)}
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--post_render_engine'>
+            <summary><span class='item-name'>post_render_engine</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>post_render_engine :: proc() {
+	swap_buffer_window()
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--pre_render_engine'>
+            <summary><span class='item-name'>pre_render_engine</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>pre_render_engine :: proc() {
+	clear_window()
+	set_current_window_size()
+
+	activate_texture(gl.TEXTURE0)
+	bind_texture(gl.TEXTURE_2D, texture_01)
+
+	use_shader(shader)
+	camera_projection := get_camera_mode(.PERSPECTIVE, &amp;camera)
+	set_uniform(shader, &quot;projection&quot;, &amp;camera_projection)
+
+	camera_view := get_camera_view(&amp;camera)
+	set_uniform(shader, &quot;view&quot;, &amp;camera_view)
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--process_input'>
+            <summary><span class='item-name'>process_input</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>process_input :: proc() {
+	set_deltatime()
+	close_window(window)
+	move_camera(&amp;camera)
+	reset_camera(&amp;camera)
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--render_engine'>
+            <summary><span class='item-name'>render_engine</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>render_engine :: proc() {
+	bind_VAO(&amp;vao)
+	for i in 0..&lt;10 {
+		init_transform(&amp;cube_transform)
+		angle := 20.0 * i
+		move(cube_positions[i], &amp;cube_transform)
+		rotate(f32(angle), {1.0, 0.3, 0.5}, &amp;cube_transform)
+		apply_transform(shader, &amp;cube_transform)
+		gl.DrawArrays(gl.TRIANGLES, 0, 36)
+	}
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--run_engine'>
+            <summary><span class='item-name'>run_engine</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#main-odin--main'>main</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>run_engine :: proc() {
+	init_engine()
+	defer delete_engine()
+
+	init_ui()
+	defer delete_ui()
+
+	for (!window_close()) {
+		process_input()
+
+		pre_render_engine()
+		render_engine()
+
+		pre_render_ui()
+		draw_status_bottom_bar_ui(&amp;camera)
+		render_ui()
+
+		post_render_engine()
+	}
+}</code></pre></div>
+        </details>
+        <details id='engine-odin--set_glfw_callback'>
+            <summary><span class='item-name'>set_glfw_callback</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>engine.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>set_glfw_callback :: proc() {
+	glfw.SetWindowUserPointer(window, &amp;camera)
+	glfw.SetCursorPosCallback(window, mouse_callback)
+	glfw.SetScrollCallback(window, mouse_scroll_callback)
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-window-odin'><div class='file-header' data-pkg='window.odin'>window<span class='file-sym-count'>7</span></div>
+        <details id='window-odin--delete_window'>
+            <summary><span class='item-name'>delete_window</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--delete_engine'>delete_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>delete_window :: proc() {
+	glfw.Terminate()
+}</code></pre></div>
+        </details>
+        <details id='window-odin--fb_size_callback'>
+            <summary><span class='item-name'>fb_size_callback</span><span class='attr'>@(private=&quot;file&quot;)</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>window</span><span class='sig-colon'>:</span> <span class='sig-param-type'>glfw.WindowHandle</span><span class='sig-comma'>, </span><span class='sig-param-name'>width</span><span class='sig-comma'>, </span><span class='sig-param-name'>height</span><span class='sig-colon'>:</span> <span class='sig-param-type'>i32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#window-odin--init_window'>init_window</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@(private=&quot;file&quot;)
+fb_size_callback :: proc &quot;c&quot; (window: glfw.WindowHandle, width, height: i32) {
+	gl.Viewport(0, 0, width, height)
+}</code></pre></div>
+        </details>
+        <details id='window-odin--init_window'>
+            <summary><span class='item-name'>init_window</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>window_width</span><span class='sig-colon'>:</span> <span class='sig-param-type'>i32</span><span class='sig-comma'>, </span><span class='sig-param-name'>window_height</span><span class='sig-colon'>:</span> <span class='sig-param-type'>i32</span><span class='sig-comma'>, </span><span class='sig-param-name'>window_title</span><span class='sig-colon'>:</span> <span class='sig-param-type'>cstring</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>init_window :: proc(window_width: i32, window_height: i32, window_title: cstring) -&gt; (bool) {
+	if !glfw.Init() {
+		return false
+	}
+
+	glfw.WindowHint(glfw.CONTEXT_VERSION_MAJOR, GL_VERSION_MAJOR)
+	glfw.WindowHint(glfw.CONTEXT_VERSION_MINOR, GL_VERSION_MINOR)
+	glfw.WindowHint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
+	window = glfw.CreateWindow(window_width, window_height, window_title, nil, nil)
+
+	if window == nil {
+		glfw.Terminate()
+		return false
+	}
+	glfw.MakeContextCurrent(window)
+
+	gl.load_up_to(GL_VERSION_MAJOR, GL_VERSION_MINOR, glfw.gl_set_proc_address)
+	log.info(gl.GetString(gl.VERSION))
+
+	glfw.SetFramebufferSizeCallback(window, fb_size_callback)
+	return true
+}</code></pre></div>
+        </details>
+        <details id='window-odin--set_current_window_size'>
+            <summary><span class='item-name'>set_current_window_size</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>set_current_window_size :: proc() {
+	current_window_width, current_window_height = glfw.GetWindowSize(window)
+}</code></pre></div>
+        </details>
+        <details id='window-odin--set_deltatime'>
+            <summary><span class='item-name'>set_deltatime</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='doc-text'>utility functions</div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--process_input'>process_input</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>set_deltatime :: proc () {
+	current_frame := glfw.GetTime()
+	delta_time = current_frame - last_frame
+	last_frame = current_frame
+}</code></pre></div>
+        </details>
+        <details id='window-odin--swap_buffer_window'>
+            <summary><span class='item-name'>swap_buffer_window</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--post_render_engine'>post_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>swap_buffer_window :: proc() {
+	glfw.SwapBuffers(window)
+	glfw.PollEvents()
+}</code></pre></div>
+        </details>
+        <details id='window-odin--window_close'>
+            <summary><span class='item-name'>window_close</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>returns</span> <span class='sig-val sig-ret'>bool</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>window.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>window_close :: proc() -&gt; bool {
+	for (!glfw.WindowShouldClose(window)) {
+		return false
+	}
+	return true
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-shader-odin'><div class='file-header' data-pkg='shader.odin'>shader<span class='file-sym-count'>4</span></div>
+        <details id='shader-odin--Shader'>
+            <summary><span class='item-name'>Shader</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a> <a class='ref-link' href='#shader-odin--init_shader'>init_shader</a> <a class='ref-link' href='#shader-odin--set_uniform'>set_uniform</a> <a class='ref-link' href='#shader-odin--use_shader'>use_shader</a> <a class='ref-link' href='#transform-odin--apply_transform'>apply_transform</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>shader.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>Shader :: struct {
+	id: u32,
+}</code></pre></div>
+        </details>
+        <details id='shader-odin--init_shader'>
+            <summary><span class='item-name'>init_shader</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='doc-text'>load GLSL file</div>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>vertex_path</span><span class='sig-comma'>, </span><span class='sig-param-name'>fragment_path</span><span class='sig-colon'>:</span> <span class='sig-param-type'>string</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(Shader, bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>shader.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>init_shader :: proc(vertex_path, fragment_path: string) -&gt; (Shader, bool) {
+	// Read file
+	program, ok := gl.load_shaders_file(vertex_path, fragment_path)
+	if !ok {
+		return {}, false
+	}
+	return Shader{id = program}, true
+}</code></pre></div>
+        </details>
+        <details id='shader-odin--set_uniform'>
+            <summary><span class='item-name'>set_uniform</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>shader</span><span class='sig-colon'>:</span> <span class='sig-param-type'>Shader</span><span class='sig-comma'>, </span><span class='sig-param-name'>name</span><span class='sig-colon'>:</span> <span class='sig-param-type'>cstring</span><span class='sig-comma'>, </span><span class='sig-param-name'>value</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^matrix[4,4]f32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a> <a class='ref-link' href='#transform-odin--apply_transform'>apply_transform</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>shader.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>set_uniform :: proc(shader: Shader, name: cstring, value: ^matrix[4,4]f32) {
+	location := gl.GetUniformLocation(shader.id, name)
+	gl.UniformMatrix4fv(location, 1, gl.FALSE, &amp;value[0][0])
+}</code></pre></div>
+        </details>
+        <details id='shader-odin--use_shader'>
+            <summary><span class='item-name'>use_shader</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>shader</span><span class='sig-colon'>:</span> <span class='sig-param-type'>Shader</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>shader.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>use_shader :: proc(shader: Shader) {
+	gl.UseProgram(shader.id)
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-texture-odin'><div class='file-header' data-pkg='texture.odin'>texture<span class='file-sym-count'>5</span></div>
+        <details id='texture-odin--Texture'>
+            <summary><span class='item-name'>Texture</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a> <a class='ref-link' href='#texture-odin--bind_texture'>bind_texture</a> <a class='ref-link' href='#texture-odin--init_texture'>init_texture</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>texture.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>Texture :: struct {
+    id: u32,
+}</code></pre></div>
+        </details>
+        <details id='texture-odin--activate_texture'>
+            <summary><span class='item-name'>activate_texture</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='doc-text'>Utility functions</div>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>texture</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>texture.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>activate_texture :: proc (texture: u32) {
+    gl.ActiveTexture(texture)
+}</code></pre></div>
+        </details>
+        <details id='texture-odin--bind_texture'>
+            <summary><span class='item-name'>bind_texture</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>target</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span><span class='sig-comma'>, </span><span class='sig-param-name'>texture</span><span class='sig-colon'>:</span> <span class='sig-param-type'>Texture</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>texture.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>bind_texture :: proc (target: u32, texture: Texture) {
+    gl.BindTexture(target, texture.id)
+}</code></pre></div>
+        </details>
+        <details id='texture-odin--init_texture'>
+            <summary><span class='item-name'>init_texture</span><span class='attr'>@require_results</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>target</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span><span class='sig-comma'>, </span><span class='sig-param-name'>wrap</span><span class='sig-comma'>, </span><span class='sig-param-name'>filter_min</span><span class='sig-comma'>, </span><span class='sig-param-name'>filter_max</span><span class='sig-colon'>:</span> <span class='sig-param-type'>i32</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(Texture)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>texture.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@require_results
+init_texture :: proc (target: u32, wrap, filter_min, filter_max: i32) -&gt; (Texture) {
+    texture: u32
+    gl.GenTextures(1, &amp;texture)
+    gl.BindTexture(target, texture)
+
+    gl.TexParameteri(target, gl.TEXTURE_WRAP_S, wrap)
+    gl.TexParameteri(target, gl.TEXTURE_WRAP_T, wrap)
+    gl.TexParameteri(target, gl.TEXTURE_MIN_FILTER, filter_min)
+    gl.TexParameteri(target, gl.TEXTURE_MAG_FILTER, filter_max)
+
+    return Texture{id = texture}
+}</code></pre></div>
+        </details>
+        <details id='texture-odin--load_texture'>
+            <summary><span class='item-name'>load_texture</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>filepath</span><span class='sig-colon'>:</span> <span class='sig-param-type'>cstring</span><span class='sig-comma'>, </span><span class='sig-param-name'>target</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span><span class='sig-comma'>, </span><span class='sig-param-name'>internal_format</span><span class='sig-colon'>:</span> <span class='sig-param-type'>i32</span><span class='sig-comma'>, </span><span class='sig-param-name'>format</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>texture.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>load_texture :: proc (filepath: cstring, target: u32, internal_format:i32, format:u32) -&gt; (bool) {
+    width, height, num_channel : i32
+    data := stb.load(filepath, &amp;width, &amp;height, &amp;num_channel, 0)
+
+    if (data == nil) {
+       return false
+    } else {
+        gl.TexImage2D(target, 0, internal_format, width, height, 0, format, gl.UNSIGNED_BYTE, data)
+        gl.GenerateMipmap(target)
+
+        return true
+    }
+     stb.image_free(data)
+
+     return true
+
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-buffers-odin'><div class='file-header' data-pkg='buffers.odin'>buffers<span class='file-sym-count'>13</span></div>
+        <details id='buffers-odin--EBO'>
+            <summary><span class='item-name'>EBO</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#buffers-odin--bind_EBO'>bind_EBO</a> <a class='ref-link' href='#buffers-odin--create_EBO'>create_EBO</a> <a class='ref-link' href='#buffers-odin--delete_EBO'>delete_EBO</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>EBO :: struct {
+    id: u32,
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--VAO'>
+            <summary><span class='item-name'>VAO</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#buffers-odin--bind_VAO'>bind_VAO</a> <a class='ref-link' href='#buffers-odin--create_VAO'>create_VAO</a> <a class='ref-link' href='#buffers-odin--delete_VAO'>delete_VAO</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>VAO :: struct {
+    id: u32,
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--VBO'>
+            <summary><span class='item-name'>VBO</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#buffers-odin--bind_VBO'>bind_VBO</a> <a class='ref-link' href='#buffers-odin--create_VBO'>create_VBO</a> <a class='ref-link' href='#buffers-odin--delete_VBO'>delete_VBO</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>VBO :: struct {
+    id: u32,
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--bind_EBO'>
+            <summary><span class='item-name'>bind_EBO</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>ebo</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^EBO</span><span class='sig-comma'>, </span><span class='sig-param-name'>indices</span><span class='sig-colon'>:</span> <span class='sig-param-type'>[]u32</span><span class='sig-comma'>, </span><span class='sig-param-name'>usage</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>bind_EBO :: proc(ebo:^EBO, indices: []u32, usage:u32) -&gt; (bool) {
+    gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, ebo.id)
+    gl.BufferData(gl.ELEMENT_ARRAY_BUFFER, size_of(indices) * len(indices), raw_data(indices), usage)
+    return true
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--bind_VAO'>
+            <summary><span class='item-name'>bind_VAO</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>vao</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^VAO</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a> <a class='ref-link' href='#engine-odin--render_engine'>render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>bind_VAO :: proc(vao:^VAO) -&gt; (bool) {
+    gl.BindVertexArray(vao.id)
+    return true
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--bind_VBO'>
+            <summary><span class='item-name'>bind_VBO</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>vbo</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^VBO</span><span class='sig-comma'>, </span><span class='sig-param-name'>vertices</span><span class='sig-colon'>:</span> <span class='sig-param-type'>[]f32</span><span class='sig-comma'>, </span><span class='sig-param-name'>usage</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>bind_VBO :: proc(vbo:^VBO, vertices: []f32, usage:u32) -&gt; (bool) {
+    gl.BindBuffer(gl.ARRAY_BUFFER, vbo.id)
+    gl.BufferData(gl.ARRAY_BUFFER, size_of(vertices) * len(vertices), raw_data(vertices), usage)
+    return true
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--create_EBO'>
+            <summary><span class='item-name'>create_EBO</span><span class='attr'>@require_results</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(EBO, bool)</span></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@require_results
+create_EBO :: proc() -&gt; (EBO, bool) {
+    ebo_id: u32
+    gl.GenBuffers(1, &amp;ebo_id)
+    return EBO{id = ebo_id}, true
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--create_VAO'>
+            <summary><span class='item-name'>create_VAO</span><span class='attr'>@require_results</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(VAO, bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@require_results
+create_VAO :: proc() -&gt; (VAO, bool) {
+    vao_id: u32
+    gl.GenVertexArrays(1, &amp;vao_id)
+    return VAO{id = vao_id}, true
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--create_VBO'>
+            <summary><span class='item-name'>create_VBO</span><span class='attr'>@require_results</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(VBO, bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@require_results
+create_VBO :: proc() -&gt; (VBO, bool) {
+    vbo_id: u32
+    gl.GenBuffers(1, &amp;vbo_id)
+    return VBO{id = vbo_id}, true
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--delete_EBO'>
+            <summary><span class='item-name'>delete_EBO</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>ebo</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^EBO</span></span></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>delete_EBO :: proc(ebo:^EBO) {
+    gl.DeleteBuffers(1, &amp;ebo.id)
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--delete_VAO'>
+            <summary><span class='item-name'>delete_VAO</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>vao</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^VAO</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--delete_engine'>delete_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>delete_VAO :: proc(vao:^VAO) {
+    gl.DeleteVertexArrays(1, &amp;vao.id)
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--delete_VBO'>
+            <summary><span class='item-name'>delete_VBO</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>vbo</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^VBO</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--delete_engine'>delete_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>delete_VBO :: proc(vbo:^VBO) {
+    gl.DeleteBuffers(1, &amp;vbo.id)
+}</code></pre></div>
+        </details>
+        <details id='buffers-odin--link_attrib'>
+            <summary><span class='item-name'>link_attrib</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>index</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span><span class='sig-comma'>, </span><span class='sig-param-name'>size</span><span class='sig-comma'>, </span><span class='sig-param-name'>stride</span><span class='sig-colon'>:</span> <span class='sig-param-type'>i32</span><span class='sig-comma'>, </span><span class='sig-param-name'>offset</span><span class='sig-colon'>:</span> <span class='sig-param-type'>u32</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>buffers.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>link_attrib :: proc(index: u32, size, stride: i32, offset: u32) -&gt; (bool) {
+	gl.VertexAttribPointer(index, size, gl.FLOAT, false, stride * size_of(f32), uintptr(offset * size_of(f32)))
+	gl.EnableVertexAttribArray(index)
+	return true
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-camera-odin'><div class='file-header' data-pkg='camera.odin'>camera<span class='file-sym-count'>5</span></div>
+        <details id='camera-odin--Camera'>
+            <summary><span class='item-name'>Camera</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#camera-odin--get_camera_mode'>get_camera_mode</a> <a class='ref-link' href='#camera-odin--get_camera_view'>get_camera_view</a> <a class='ref-link' href='#camera-odin--init_camera'>init_camera</a> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a> <a class='ref-link' href='#input-odin--mouse_callback'>mouse_callback</a> <a class='ref-link' href='#input-odin--mouse_scroll_callback'>mouse_scroll_callback</a> <a class='ref-link' href='#input-odin--move_camera'>move_camera</a> <a class='ref-link' href='#input-odin--reset_camera'>reset_camera</a> <a class='ref-link' href='#ui-odin--draw_status_bottom_bar_ui'>draw_status_bottom_bar_ui</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>camera.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>Camera :: struct {
+	pos:   			la.Vector3f32,
+	rot: 			la.Vector3f32,
+	target: 		la.Vector3f32,
+	up:    			la.Vector3f32,
+	fov:   			f32,
+	aspect_ratio: 	la.Vector2f32,
+	near:  			f32,
+	far:   			f32,
+}</code></pre></div>
+        </details>
+        <details id='camera-odin--Camera_mode'>
+            <summary><span class='item-name'>Camera_mode</span><span class='badge badge-enum'>ENUM</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#camera-odin--get_camera_mode'>get_camera_mode</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>camera.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>Camera_mode :: enum {
+	PERSPECTIVE,
+	ORTHOGRAPHIC,
+}</code></pre></div>
+        </details>
+        <details id='camera-odin--get_camera_mode'>
+            <summary><span class='item-name'>get_camera_mode</span><span class='attr'>@require_results</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>cam_mode</span><span class='sig-colon'>:</span> <span class='sig-param-type'>Camera_mode</span><span class='sig-comma'>, </span><span class='sig-param-name'>camera</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Camera</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>la.Matrix4f32</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>camera.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@require_results
+get_camera_mode :: proc(cam_mode: Camera_mode, camera: ^Camera) -&gt; la.Matrix4f32  {
+	switch cam_mode {
+	case .PERSPECTIVE:
+		return la.matrix4_perspective_f32(ma.to_radians_f32(camera.fov), f32(camera.aspect_ratio.x) / f32(camera.aspect_ratio.y), camera.near, camera.far)
+	// not yet implement ortho logic
+	case .ORTHOGRAPHIC:
+		return 0
+	}
+	return 0
+}</code></pre></div>
+        </details>
+        <details id='camera-odin--get_camera_view'>
+            <summary><span class='item-name'>get_camera_view</span><span class='attr'>@require_results</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>camera</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Camera</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>la.Matrix4f32</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--pre_render_engine'>pre_render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>camera.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>@require_results
+get_camera_view :: proc(camera: ^Camera) -&gt; la.Matrix4f32 {
+	return la.matrix4_look_at_f32(camera.pos, camera.pos + camera.target, camera.up)
+}</code></pre></div>
+        </details>
+        <details id='camera-odin--init_camera'>
+            <summary><span class='item-name'>init_camera</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>camera</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Camera</span></span> &nbsp;&middot;&nbsp; <span class='sig-label'>returns</span> <span class='sig-val sig-ret'>(bool)</span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>camera.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>init_camera :: proc(camera: ^Camera) -&gt; (bool) {
+	pitch : f32 = 0.0
+	yaw : f32 = -90.0
+
+	camera.pos = {0.0, 0.0, 3.0}
+	camera.rot = {pitch, yaw, 0.0}
+	camera.target = {0.0, 0.0, -1.0}
+	camera.up = {0.0, 1.0, 0.0}
+	camera.fov = 45.0
+	camera.near = 0.1
+	camera.far = 100.0
+	return true
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-input-odin'><div class='file-header' data-pkg='input.odin'>input<span class='file-sym-count'>6</span></div>
+        <details id='input-odin--close_window'>
+            <summary><span class='item-name'>close_window</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>window</span><span class='sig-colon'>:</span> <span class='sig-param-type'>glfw.WindowHandle</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--process_input'>process_input</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>input.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>close_window:: proc(window: glfw.WindowHandle) {
+	if (glfw.GetKey(window, glfw.KEY_ESCAPE) == glfw.PRESS) {
+		glfw.SetWindowShouldClose(window, true)
+	}
+}</code></pre></div>
+        </details>
+        <details id='input-odin--mouse_callback'>
+            <summary><span class='item-name'>mouse_callback</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='doc-text'>callback functions</div>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>window</span><span class='sig-colon'>:</span> <span class='sig-param-type'>glfw.WindowHandle</span><span class='sig-comma'>, </span><span class='sig-param-name'>x_pos</span><span class='sig-colon'>:</span> <span class='sig-param-type'>f64</span><span class='sig-comma'>, </span><span class='sig-param-name'>y_pos</span><span class='sig-colon'>:</span> <span class='sig-param-type'>f64</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--set_glfw_callback'>set_glfw_callback</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>input.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>mouse_callback :: proc &quot;c&quot; (window: glfw.WindowHandle, x_pos: f64, y_pos: f64) {
+	camera_ptr := (^Camera)(glfw.GetWindowUserPointer(window))
+
+	if (first_mouse) {
+		last_x = f32(x_pos)
+		last_y = f32(y_pos)
+		first_mouse = false
+	}
+
+	x_offset := f32(x_pos) - last_x
+	y_offset := last_y - f32(y_pos)
+
+	last_x = f32(x_pos)
+	last_y = f32(y_pos)
+
+	sensitivity : f32 = 0.1
+	x_offset *= sensitivity
+	y_offset *= sensitivity
+
+	camera_ptr.rot.y += x_offset
+	camera_ptr.rot.x += y_offset
+
+	// limit pitch
+	if (camera_ptr.rot.x &gt; 89.0)  {camera_ptr.rot.x = 89.0}
+	if (camera_ptr.rot.x &lt; -89.0) {camera_ptr.rot.x = -89.0}
+
+	direction : la.Vector3f32
+	direction.x = ma.cos(ma.to_radians_f32(camera_ptr.rot.y)) * ma.cos(ma.to_radians_f32(camera_ptr.rot.x))
+	direction.y = ma.sin(ma.to_radians_f32(camera_ptr.rot.x))
+	direction.z = ma.sin(ma.to_radians_f32(camera_ptr.rot.y)) * ma.cos(ma.to_radians_f32(camera_ptr.rot.x))
+	camera_ptr.target = la.normalize(direction)
+}</code></pre></div>
+        </details>
+        <details id='input-odin--mouse_scroll_callback'>
+            <summary><span class='item-name'>mouse_scroll_callback</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>window</span><span class='sig-colon'>:</span> <span class='sig-param-type'>glfw.WindowHandle</span><span class='sig-comma'>, </span><span class='sig-param-name'>x_offset</span><span class='sig-comma'>, </span><span class='sig-param-name'>y_offset</span><span class='sig-colon'>:</span> <span class='sig-param-type'>f64</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--set_glfw_callback'>set_glfw_callback</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>input.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>mouse_scroll_callback :: proc &quot;c&quot; (window: glfw.WindowHandle, x_offset, y_offset: f64) {
+	camera_ptr := (^Camera)(glfw.GetWindowUserPointer(window))
+
+	// limit field of view
+	camera_ptr.fov -= f32(y_offset)
+	if (camera_ptr.fov &lt; 1.0)  {camera_ptr.fov = 1.0}
+	if (camera_ptr.fov &gt; 45.0) {camera_ptr.fov = 45.0}
+}</code></pre></div>
+        </details>
+        <details id='input-odin--move_camera'>
+            <summary><span class='item-name'>move_camera</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>camera</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Camera</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--process_input'>process_input</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>input.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>move_camera:: proc(camera: ^Camera) {
+	base_camera_speed := 4.0 * f32(delta_time)
+	camera_speed_multiplier := 6.0
+	current_camera_speed := base_camera_speed
+
+	// increase &amp; revert camera speed based on shift state
+	if (glfw.GetKey(window, glfw.KEY_LEFT_SHIFT) == glfw.PRESS) {
+		current_camera_speed = base_camera_speed * f32(camera_speed_multiplier)
+	} else if (glfw.GetKey(window, glfw.KEY_LEFT_SHIFT) == glfw.RELEASE) {
+		current_camera_speed = base_camera_speed
+	}
+
+	// move camera
+	if (glfw.GetKey(window, glfw.KEY_W) == glfw.PRESS) {
+		camera.pos += f32(current_camera_speed) * camera.target
+	} else if (glfw.GetKey(window, glfw.KEY_S) == glfw.PRESS) {
+		camera.pos -= f32(current_camera_speed) * camera.target
+	} else if (glfw.GetKey(window, glfw.KEY_A) == glfw.PRESS) {
+		camera.pos -= la.normalize(la.cross(camera.target, camera.up)) * f32(current_camera_speed)
+	} else if (glfw.GetKey(window, glfw.KEY_D) == glfw.PRESS) {
+		camera.pos += la.normalize(la.cross(camera.target, camera.up)) * f32(current_camera_speed)
+	}
+}</code></pre></div>
+        </details>
+        <details id='input-odin--reset_camera'>
+            <summary><span class='item-name'>reset_camera</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>camera</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Camera</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--process_input'>process_input</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>input.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>reset_camera:: proc(camera: ^Camera) {
+	if (glfw.GetKey(window, glfw.KEY_R) == glfw.PRESS) {
+		camera.pos = {0.0, 0.0, 0.0}
+		camera.fov = 45.0
+	}
+}</code></pre></div>
+        </details>
+        <details id='input-odin--set_input_mode'>
+            <summary><span class='item-name'>set_input_mode</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='doc-text'>utility functions</div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--init_engine'>init_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>input.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>set_input_mode :: proc() {
+	glfw.SetInputMode(window, glfw.CURSOR, glfw.CURSOR_DISABLED)
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-transform-odin'><div class='file-header' data-pkg='transform.odin'>transform<span class='file-sym-count'>6</span></div>
+        <details id='transform-odin--Transform'>
+            <summary><span class='item-name'>Transform</span><span class='badge badge-struct'>STRUCT</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#transform-odin--apply_transform'>apply_transform</a> <a class='ref-link' href='#transform-odin--init_transform'>init_transform</a> <a class='ref-link' href='#transform-odin--move'>move</a> <a class='ref-link' href='#transform-odin--rotate'>rotate</a> <a class='ref-link' href='#transform-odin--scale'>scale</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>transform.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>Transform :: struct {
+	id : la.Matrix4f32,
+}</code></pre></div>
+        </details>
+        <details id='transform-odin--apply_transform'>
+            <summary><span class='item-name'>apply_transform</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>shader</span><span class='sig-colon'>:</span> <span class='sig-param-type'>Shader</span><span class='sig-comma'>, </span><span class='sig-param-name'>trans</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Transform</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--render_engine'>render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>transform.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>apply_transform :: proc(shader: Shader, trans: ^Transform) {
+	set_uniform(shader, &quot;model&quot;, &amp;trans.id )
+}</code></pre></div>
+        </details>
+        <details id='transform-odin--init_transform'>
+            <summary><span class='item-name'>init_transform</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>trans</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Transform</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--render_engine'>render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>transform.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>init_transform :: proc(trans: ^Transform) {
+	trans.id = la.MATRIX4F32_IDENTITY
+}</code></pre></div>
+        </details>
+        <details id='transform-odin--move'>
+            <summary><span class='item-name'>move</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>obj</span><span class='sig-colon'>:</span> <span class='sig-param-type'>la.Vector3f32</span><span class='sig-comma'>, </span><span class='sig-param-name'>trans</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Transform</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--render_engine'>render_engine</a> <a class='ref-link' href='#input-odin--move_camera'>move_camera</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>transform.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>move :: proc(obj: la.Vector3f32, trans: ^Transform) {
+	trans.id = trans.id * la.matrix4_translate_f32(obj)
+}</code></pre></div>
+        </details>
+        <details id='transform-odin--rotate'>
+            <summary><span class='item-name'>rotate</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>angle</span><span class='sig-colon'>:</span> <span class='sig-param-type'>f32</span><span class='sig-comma'>, </span><span class='sig-param-name'>v</span><span class='sig-colon'>:</span> <span class='sig-param-type'>la.Vector3f32</span><span class='sig-comma'>, </span><span class='sig-param-name'>trans</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Transform</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--render_engine'>render_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>transform.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>rotate :: proc(angle: f32, v:la.Vector3f32, trans: ^Transform) {
+	trans.id = trans.id * la.matrix4_rotate_f32(ma.to_radians(angle), v)
+}</code></pre></div>
+        </details>
+        <details id='transform-odin--scale'>
+            <summary><span class='item-name'>scale</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>v</span><span class='sig-colon'>:</span> <span class='sig-param-type'>la.Vector3f32</span><span class='sig-comma'>, </span><span class='sig-param-name'>trans</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Transform</span></span></div>
+            <div class='content'><div class='code-header'><span class='code-file'>transform.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>scale :: proc(v:la.Vector3f32, trans: ^Transform) {
+	trans.id = trans.id * la.matrix4_scale_f32(v)
+}</code></pre></div>
+        </details></div><div class='file-section' id='sec-ui-odin'><div class='file-header' data-pkg='ui.odin'>ui<span class='file-sym-count'>8</span></div>
+        <details id='ui-odin--delete_ui'>
+            <summary><span class='item-name'>delete_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>delete_ui :: proc() {
+	imgui_impl_opengl3.Shutdown()
+	imgui_impl_glfw.Shutdown()
+	im.DestroyContext()
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--draw_f32_colored_ui'>
+            <summary><span class='item-name'>draw_f32_colored_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>label</span><span class='sig-colon'>:</span> <span class='sig-param-type'>string</span><span class='sig-comma'>, </span><span class='sig-param-name'>format</span><span class='sig-colon'>:</span> <span class='sig-param-type'>cstring</span><span class='sig-comma'>, </span><span class='sig-param-name'>v</span><span class='sig-colon'>:</span> <span class='sig-param-type'>f32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#ui-odin--draw_status_bottom_bar_ui'>draw_status_bottom_bar_ui</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>draw_f32_colored_ui :: proc(label: string, format: cstring, v: f32) {
+    im.Text(&quot;%s: &quot;, label)
+    im.SameLine(0, 0)
+
+    im.TextColored({1.0, 1.0, 0.4, 1.0}, format, v) // X - Red
+    im.SameLine(0, 4)
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--draw_status_bottom_bar_ui'>
+            <summary><span class='item-name'>draw_status_bottom_bar_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>camera</span><span class='sig-colon'>:</span> <span class='sig-param-type'>^Camera</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>draw_status_bottom_bar_ui :: proc(camera: ^Camera) {
+	bar_height : f32 = 25.0
+	im.SetNextWindowPos({0, f32(current_window_height) - bar_height})
+	im.SetNextWindowSize({f32(current_window_width) + 2, bar_height})
+
+	flags := im.WindowFlags{.NoTitleBar, .NoResize, .NoMove, .NoScrollbar, .NoBackground}
+
+	im.Begin(&quot;Status Bar&quot;, nil, flags)
+	draw_f32_colored_ui(&quot;FPS&quot;, &quot;%.2f&quot;, f32(1.0 / delta_time))
+	im.SameLine()
+	im.Text(&quot;|&quot;)
+	im.SameLine()
+
+	draw_f32_colored_ui(&quot;DT&quot;, &quot;%.4f&quot;, f32(delta_time))
+	im.SameLine()
+	im.Text(&quot;|&quot;)
+	im.SameLine()
+
+	im.Text(&quot;=O=&quot;)
+	im.SameLine()
+	draw_vec3_colored_ui(&quot;Pos&quot;, camera.pos)
+
+	im.SameLine()
+	im.Text(&quot;*&quot;)
+	im.SameLine()
+	draw_vec2_colored_ui(&quot;Rot&quot;, camera.rot)
+
+	im.SameLine()
+	draw_f32_colored_ui(&quot;Fov&quot;, &quot;%.2f&quot;, camera.fov)
+	im.End()
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--draw_vec2_colored_ui'>
+            <summary><span class='item-name'>draw_vec2_colored_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>label</span><span class='sig-colon'>:</span> <span class='sig-param-type'>string</span><span class='sig-comma'>, </span><span class='sig-param-name'>v</span><span class='sig-colon'>:</span> <span class='sig-param-type'>[3]f32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#ui-odin--draw_status_bottom_bar_ui'>draw_status_bottom_bar_ui</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>draw_vec2_colored_ui :: proc(label: string, v: [3]f32) {
+    im.Text(&quot;%s: &quot;, label)
+    im.SameLine(0, 0)
+
+    im.TextColored({1.0, 0.4, 0.4, 1.0}, &quot;%.2f&quot;, v.x) // X - Red
+    im.SameLine(0, 0)
+    im.Text(&quot;, &quot;)
+    im.SameLine(0, 2)
+
+    im.TextColored({0.4, 1.0, 0.4, 1.0}, &quot;%.2f&quot;, v.y) // Y - Green
+    im.SameLine(0, 0)
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--draw_vec3_colored_ui'>
+            <summary><span class='item-name'>draw_vec3_colored_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='doc-text'>utility functions</div>
+            <div class='sig-bar'><span class='sig-label'>params</span> <span class='sig-val'><span class='sig-param-name'>label</span><span class='sig-colon'>:</span> <span class='sig-param-type'>string</span><span class='sig-comma'>, </span><span class='sig-param-name'>v</span><span class='sig-colon'>:</span> <span class='sig-param-type'>[3]f32</span></span></div>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#ui-odin--draw_status_bottom_bar_ui'>draw_status_bottom_bar_ui</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>draw_vec3_colored_ui :: proc(label: string, v: [3]f32) {
+    im.Text(&quot;%s: &quot;, label)
+    im.SameLine(0, 0)
+
+    im.TextColored({1.0, 0.4, 0.4, 1.0}, &quot;%.2f&quot;, v.x) // X - Red
+    im.SameLine(0, 0)
+    im.Text(&quot;, &quot;)
+    im.SameLine(0, 2)
+
+    im.TextColored({0.4, 1.0, 0.4, 1.0}, &quot;%.2f&quot;, v.y) // Y - Green
+    im.SameLine(0, 0)
+    im.Text(&quot;, &quot;)
+    im.SameLine(0, 2)
+
+    im.TextColored({0.4, 0.4, 1.0, 1.0}, &quot;%.2f&quot;, v.z) // Z - Blue
+    im.SameLine(0, 0)
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--init_ui'>
+            <summary><span class='item-name'>init_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>init_ui :: proc() {
+	im.CreateContext()
+	imgui_impl_glfw.InitForOpenGL(window, true)
+	imgui_impl_opengl3.Init(&quot;#version 460&quot;)
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--pre_render_ui'>
+            <summary><span class='item-name'>pre_render_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>pre_render_ui :: proc() {
+	// ui default
+	imgui_impl_opengl3.NewFrame()
+	imgui_impl_glfw.NewFrame()
+	im.NewFrame()
+}</code></pre></div>
+        </details>
+        <details id='ui-odin--render_ui'>
+            <summary><span class='item-name'>render_ui</span><span class='badge badge-proc'>PROC</span></summary>
+            <div class='refs-bar'><span class='refs-label'>used by</span> <a class='ref-link' href='#engine-odin--run_engine'>run_engine</a></div>
+            <div class='content'><div class='code-header'><span class='code-file'>ui.odin</span><button class='copy-btn' onclick='copyCode(this)' title='Copy'>&#x2398;</button></div><pre class='language-odin'><code class='language-odin'>render_ui :: proc() {
+	im.Render()
+	imgui_impl_opengl3.RenderDrawData(im.GetDrawData())
+}</code></pre></div>
+        </details></div></div>
+
+    <div id="no-results" aria-hidden="true">
+        <div id="no-results-icon">&#8708;</div>
+        <div id="no-results-text">No symbols match</div>
+        <div id="no-results-sub">Try a different name or category</div>
+    </div>
+</main>
+
+<script>
+"use strict";
+
+// ============================================================================
+// 1. Data
+// ============================================================================
+var TOC  = JSON.parse(document.getElementById("toc-data").textContent);
+var META = JSON.parse(document.getElementById("meta-data").textContent);
+
+document.getElementById("sidebar-count").textContent = META.item_count + " symbols";
+document.getElementById("gen-time").textContent      = META.generated_at;
+
+// Flat name -> id map, O(1) lookup. First declaration wins on collision.
+var SYMBOL_MAP = Object.create(null);
+Object.entries(TOC).forEach(function (entry) {
+    entry[1].forEach(function (sym) {
+        if (!SYMBOL_MAP[sym.name]) SYMBOL_MAP[sym.name] = sym.id;
+    });
+});
+
+// ============================================================================
+// 2. Syntax highlighter — single-pass, priority-ordered rules
+//    The _buf bitmap ensures a range claimed by an earlier rule is never
+//    overwritten by a later one.
+// ============================================================================
+(function () {
+        var RULES = [
+        // Strings & comments first — protect internals from keyword matches
+        { cls: "cm",  re: /\/\*[\s\S]*?\*\//g },
+        { cls: "cm",  re: /\/\/[^\n]*/g },
+        { cls: "str",  re: /`[^`]*`/g },
+        { cls: "str",  re: /"(?:[^"\\]|\\.)*"/g },
+        { cls: "str",  re: /'(?:[^'\\]|\\.)*'/g },
+        // Declaration names — before keywords to avoid double-colour
+        { cls: "fn",  re: /\b([A-Za-z_]\w*)(\s*::\s*proc\b)/g,                  cap: true },
+        { cls: "ty",  re: /\b([A-Za-z_]\w*)(\s*::\s*(?:struct|enum|union)\b)/g, cap: true },
+        // Directives & attributes
+        { cls: "dr",  re: /#[a-z_]+/g },
+        { cls: "at",  re: /@(?:\([^)]*\)|\w+)/g },
+        // Keywords
+        { cls: "kw",  re: /\b(?:package|import|proc|struct|enum|union|bit_set|map|dynamic|matrix|return|defer|if|else|when|for|switch|case|break|continue|fallthrough|using|context|foreign|distinct|where|do|in|not_in|or_else|or_return|auto_cast|cast|transmute)\b/g },
+        // Built-in types
+        { cls: "ty",  re: /\b(?:bool|b8|b16|b32|b64|byte|rune|string|cstring|rawptr|any|typeid|int|uint|uintptr|i8|i16|i32|i64|i128|u8|u16|u32|u64|u128|f16|f32|f64|f16le|f16be|f32le|f32be|f64le|f64be|complex32|complex64|complex128|quaternion64|quaternion128|quaternion256)\b/g },
+        // Literals
+        { cls: "bl",  re: /\b(?:true|false|nil)\b/g },
+        // Built-in procedures
+        { cls: "bi",  re: /\b(?:len|cap|size_of|align_of|offset_of|type_of|type_info_of|typeid_of|make|new|new_clone|free|free_all|delete|append|append_elem|append_elems|append_nothing|assign_at|clear|reserve|resize|shrink|copy|unordered_remove|ordered_remove|pop|push|swizzle|complex|real|imag|conj|expand_to_tuple|min|max|abs|clamp|assert|assertf|panic|panicf|unreachable|print|println|printf|fprintf|sprintf|eprintf|eprintln|eprintfln)\b/g },
+        // Numeric literals
+        { cls: "nm",  re: /\b(?:0x[\da-fA-F][\da-fA-F_]*|0b[01][01_]*|0o[0-7][0-7_]*|\d[\d_]*(?:\.[\d_]+)?(?:[eE][+-]?\d[\d_]*)?i?)\b/g },
+        // Operators
+        { cls: "dc",  re: /::/g },
+        { cls: "as", re: /:=/g },
+        { cls: "pt",  re: /\^/g },
+        { cls: "ar",  re: /->/g },
+        { cls: "op",  re: /\.\./g },
+        { cls: "op",  re: /[+\-*/%=<>!&|~?]+/g },
+    ];
+
+    function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    var _buf = new Uint8Array(0);
+
+    function highlight(raw) {
+        var n = raw.length;
+        if (_buf.length < n) { _buf = new Uint8Array(n * 2); }
+        else                 { _buf.fill(0, 0, n); }
+
+        var matches = [];
+        for (var ri = 0; ri < RULES.length; ri++) {
+            var rule = RULES[ri];
+            rule.re.lastIndex = 0;
+            var m;
+            while ((m = rule.re.exec(raw)) !== null) {
+                var s = m.index;
+                var e = rule.cap ? s + m[1].length : s + m[0].length;
+                var skip = false;
+                for (var i = s; i < e; i++) { if (_buf[i]) { skip = true; break; } }
+                if (skip) continue;
+                for (var j = s; j < e; j++) _buf[j] = 1;
+                matches.push([s, e, rule.cls]);
+            }
+        }
+        matches.sort(function (a, b) { return a[0] - b[0]; });
+
+        var out = "", pos = 0;
+        for (var k = 0; k < matches.length; k++) {
+            var ms = matches[k][0], me = matches[k][1], mc = matches[k][2];
+            if (ms > pos) out += esc(raw.slice(pos, ms));
+            out += "<span class=\"hl-" + mc + "\">" + esc(raw.slice(ms, me)) + "</span>";
+            pos = me;
+        }
+        if (pos < n) out += esc(raw.slice(pos));
+        return out;
+    }
+
+    window.highlightAll = function (root) {
+        var els = (root || document).querySelectorAll("code.language-odin:not([data-hl])");
+        for (var i = 0; i < els.length; i++) {
+            els[i].dataset.hl = "1";
+            els[i].innerHTML  = highlight(els[i].textContent);
+        }
+    };
+}());
+
+// ============================================================================
+// 3. Cross-reference linker
+//    Runs after highlighting. Walks <code> children:
+//      text nodes        — scan for known symbol names
+//      span.hl-fn/ty/bi  — wrap entire content in <a> if it names a symbol
+//      span.hl-cm/str/kw — skipped (never link inside comments/strings/keywords)
+// ============================================================================
+(function () {
+    var LINKABLE = { "hl-fn": true, "hl-ty": true, "hl-bi": true };
+    var SKIP_CLS = { "hl-cm": true, "hl-str": true, "hl-kw": true,
+                     "hl-dr": true, "hl-at": true,  "hl-nm": true,
+                     "hl-bl": true, "hl-dc": true,  "hl-as": true };
+    var IDENT_RE = /\b([A-Za-z_]\w*)\b/g;
+
+    function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function makeLink(word, id) {
+        var a = document.createElement("a");
+        a.className   = "sym-link";
+        a.href        = "#" + id;
+        a.title       = "Go to " + word;
+        a.textContent = word;
+        a.onclick = (function (tid) {
+            return function (ev) { ev.preventDefault(); navigateTo(tid); };
+        }(id));
+        return a;
+    }
+
+    function linkTextNode(node, self) {
+        var text = node.nodeValue;
+        IDENT_RE.lastIndex = 0;
+        var m, parts = [], pos = 0, any = false;
+        while ((m = IDENT_RE.exec(text)) !== null) {
+            var w = m[1];
+            if (w === self || !SYMBOL_MAP[w]) continue;
+            if (m.index > pos) parts.push(document.createTextNode(text.slice(pos, m.index)));
+            parts.push(makeLink(w, SYMBOL_MAP[w]));
+            pos = m.index + w.length;
+            any = true;
+        }
+        if (!any) return;
+        if (pos < text.length) parts.push(document.createTextNode(text.slice(pos)));
+        var parent = node.parentNode;
+        parts.forEach(function (n) { parent.insertBefore(n, node); });
+        parent.removeChild(node);
+    }
+
+    function linkSpan(span, self) {
+        var w = span.textContent;
+        if (!w || w === self || !SYMBOL_MAP[w] || span.querySelector("a.sym-link")) return;
+        var a = makeLink(w, SYMBOL_MAP[w]);
+        while (span.firstChild) a.appendChild(span.firstChild);
+        span.appendChild(a);
+    }
+
+    window.linkAll = function (root) {
+        var els = (root || document).querySelectorAll("code.language-odin[data-hl]:not([data-linked])");
+        for (var i = 0; i < els.length; i++) {
+            var el   = els[i];
+            el.dataset.linked = "1";
+            var det  = el.closest("details");
+            var self = det ? ((det.querySelector(".item-name") || {}).textContent || "") : "";
+            var kids = Array.from(el.childNodes);
+            for (var c = 0; c < kids.length; c++) {
+                var node = kids[c];
+                if (node.nodeType === Node.TEXT_NODE) {
+                    linkTextNode(node, self);
+                } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "SPAN") {
+                    if (SKIP_CLS[node.className]) continue;
+                    if (LINKABLE[node.className]) linkSpan(node, self);
+                }
+            }
+        }
+    };
+}());
+
+// ============================================================================
+// 4. Navigation
+//    At module scope so linker onclick handlers can call navigateTo immediately.
+// ============================================================================
+var NAV_HISTORY = [];
+
+// Cached after sidebar build — avoids querySelectorAll on every navigation
+var _sidebarLinkMap = Object.create(null); // id -> <a> element
+
+function updateActiveSidebarLink(id) {
+    Object.keys(_sidebarLinkMap).forEach(function (k) {
+        _sidebarLinkMap[k].classList.toggle("active", k === id);
+    });
+}
+
+function updateBackBtn() {
+    var btn = document.getElementById("back-btn");
+    if (btn) btn.disabled = NAV_HISTORY.length === 0;
+}
+
+function navigateTo(itemId, pushHistory) {
+    var el = document.getElementById(itemId);
+    if (!el) return;
+
+    if (pushHistory !== false) {
+        var cur = window.location.hash.slice(1);
+        if (cur && cur !== itemId) {
+            NAV_HISTORY.push(cur);
+            if (NAV_HISTORY.length > 20) NAV_HISTORY.shift();
+        }
+    }
+
+    el.open = true;
+    window.highlightAll(el);
+    window.linkAll(el);
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.classList.add("flash");
+    setTimeout(function () { el.classList.remove("flash"); }, 800);
+    history.replaceState({ navType: "internal" }, "", "#" + itemId);
+    updateBackBtn();
+    updateActiveSidebarLink(itemId);
+}
+
+// ============================================================================
+// 5. Bootstrap
+// ============================================================================
+document.addEventListener("DOMContentLoaded", function () {
+
+    window.highlightAll();
+    window.linkAll();
+    updateBackBtn();
+
+    // Anchor on load — only on fresh navigation, not reload
+    (function () {
+        var hash = window.location.hash.slice(1);
+        if (!hash) return;
+        var isReload = (history.state && history.state.navType === "internal") ||
+                       (performance.navigation && performance.navigation.type >= 1);
+        if (isReload) { history.replaceState(null, "", window.location.pathname); return; }
+        var el = document.getElementById(hash);
+        if (!el) return;
+        el.open = true;
+        window.highlightAll(el);
+        window.linkAll(el);
+        setTimeout(function () { el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 80);
+    }());
+
+    // Lazy highlight/link + open animation on <details> toggle
+    document.addEventListener("toggle", function (e) {
+        if (e.target.tagName !== "DETAILS") return;
+        e.target.classList.toggle("is-open", e.target.open);
+        if (e.target.open) { window.highlightAll(e.target); window.linkAll(e.target); }
+    }, true);
+
+    // ref-link clicks (delegated)
+    document.getElementById("api-root").addEventListener("click", function (e) {
+        var a = e.target.closest(".ref-link");
+        if (!a) return;
+        e.preventDefault();
+        navigateTo(a.getAttribute("href").slice(1));
+    });
+
+    // ── Sidebar build ────────────────────────────────────────────────────────
+    var sidebarContent = document.getElementById("sidebar-content");
+    var sidebarGroups  = [];
+    var CAT_ICON       = { STRUCT: "S", ENUM: "E", PROC: "P", UNION: "U" };
+
+    // Pre-cache detail metadata once — used by filter, expand/collapse, j/k
+    var detailMeta = Array.from(document.querySelectorAll("details")).map(function (el) {
+        var nameEl  = el.querySelector("summary .item-name");
+        var badgeEl = el.querySelector(".badge");
+        return {
+            el:   el,
+            name: nameEl  ? nameEl.textContent.toLowerCase() : "",
+            cat:  badgeEl ? badgeEl.textContent.trim()        : "",
+            sec:  el.closest(".file-section"),
+        };
+    });
+
+    var allSections = Array.from(document.querySelectorAll(".file-section"));
+
+    Object.entries(TOC).forEach(function (entry) {
+        var pkg    = entry[0];
+        var syms   = entry[1];
+        var safeId = pkg.replace(/[/\\.]/g, "-");
+        var storeKey    = "toc-" + safeId;
+        var isCollapsed = localStorage.getItem(storeKey) !== "0";
+
+        var group = document.createElement("div");
+        group.className = "toc-group";
+
+        var hdr = document.createElement("div");
+        hdr.className = "toc-pkg";
+
+        var label = document.createElement("span");
+        label.className   = "toc-pkg-label";
+        label.textContent = pkg.replace(/^.*[/\\]/, "").replace(/\.odin$/i, "");
+
+        var count = document.createElement("span");
+        count.className   = "toc-pkg-count";
+        count.textContent = syms.length;
+
+        var arrow = document.createElement("span");
+        arrow.className = "toc-arrow";
+        arrow.innerHTML = "&#9662;";
+
+        hdr.appendChild(label);
+        hdr.appendChild(count);
+        hdr.appendChild(arrow);
+
+        var list = document.createElement("ul");
+        list.className = "toc-list";
+
+        function applyCollapse() {
+            list.classList.toggle("collapsed", isCollapsed);
+            arrow.style.transform = isCollapsed ? "rotate(-90deg)" : "";
+        }
+        applyCollapse();
+
+        hdr.onclick = function () {
+            isCollapsed = !isCollapsed;
+            localStorage.setItem(storeKey, isCollapsed ? "1" : "0");
+            applyCollapse();
+        };
+
+        sidebarGroups.push({
+            setCollapsed: function (v) {
+                isCollapsed = v;
+                localStorage.setItem(storeKey, v ? "1" : "0");
+                applyCollapse();
+            }
+        });
+
+        syms.forEach(function (sym) {
+            var li   = document.createElement("li");
+            var a    = document.createElement("a");
+            a.href       = "#" + sym.id;
+            a.className  = "toc-link toc-" + sym.cat.toLowerCase();
+            a.dataset.id = sym.id;
+
+            var icon = document.createElement("span");
+            icon.className   = "toc-icon toc-icon-" + sym.cat.toLowerCase();
+            icon.textContent = CAT_ICON[sym.cat] || sym.cat[0];
+
+            var name = document.createElement("span");
+            name.className   = "toc-link-name";
+            name.textContent = sym.name;
+
+            a.appendChild(icon);
+            a.appendChild(name);
+
+            a.onclick = (function (id) {
+                return function (ev) {
+                    ev.preventDefault();
+                    if (isCollapsed) {
+                        isCollapsed = false;
+                        localStorage.setItem(storeKey, "0");
+                        applyCollapse();
+                    }
+                    navigateTo(id);
+                };
+            }(sym.id));
+
+            // Register in link map for O(1) active-state updates
+            _sidebarLinkMap[sym.id] = a;
+
+            li.appendChild(a);
+            list.appendChild(li);
+        });
+
+        group.appendChild(hdr);
+        group.appendChild(list);
+        sidebarContent.appendChild(group);
+    });
+
+    document.getElementById("sb-expand-all").onclick = function () {
+        sidebarGroups.forEach(function (g) { g.setCollapsed(false); });
+    };
+    document.getElementById("sb-collapse-all").onclick = function () {
+        sidebarGroups.forEach(function (g) { g.setCollapsed(true); });
+    };
+
+    // ── Sidebar toggle ──────────────────────────────────────────────────────
+    var sidebar     = document.getElementById("sidebar");
+    var sidebarOpen = localStorage.getItem("sidebar") !== "0";
+
+    function setSidebar(open) {
+        sidebarOpen = open;
+        sidebar.classList.toggle("hidden", !open);
+        localStorage.setItem("sidebar", open ? "1" : "0");
+    }
+    setSidebar(sidebarOpen);
+    document.getElementById("sidebar-toggle").onclick = function () { setSidebar(!sidebarOpen); };
+
+    // ── Back button ─────────────────────────────────────────────────────────
+    document.getElementById("back-btn").onclick = function () {
+        if (!NAV_HISTORY.length) return;
+        navigateTo(NAV_HISTORY.pop(), false);
+        updateBackBtn();
+    };
+
+    // ── Search + filter ─────────────────────────────────────────────────────
+    var searchEl   = document.getElementById("search");
+    var filterBtns = document.querySelectorAll(".filter-btn");
+    var noResults  = document.getElementById("no-results");
+    var activeCat  = "ALL";
+    var _jkIndex   = -1;
+
+    // Category counts
+    var catCounts = { ALL: detailMeta.length, STRUCT: 0, ENUM: 0, PROC: 0, UNION: 0 };
+    detailMeta.forEach(function (m) {
+        if (catCounts[m.cat] !== undefined) catCounts[m.cat]++;
+    });
+    filterBtns.forEach(function (btn) {
+        var el = btn.querySelector(".filter-count");
+        if (el && catCounts[btn.dataset.cat] !== undefined)
+            el.textContent = catCounts[btn.dataset.cat];
+    });
+
+    // Cache sidebar name spans for search highlight
+    var tocLinkNames = Array.from(sidebarContent.querySelectorAll(".toc-link-name"));
+
+    function escHtml(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function highlightMatch(el, term) {
+        var text = el.dataset.orig || el.textContent;
+        el.dataset.orig = text;
+        if (!term) { el.textContent = text; return; }
+        var idx = text.toLowerCase().indexOf(term);
+        if (idx === -1) { el.textContent = text; return; }
+        el.innerHTML =
+            escHtml(text.slice(0, idx)) +
+            "<mark class='search-hl'>" + escHtml(text.slice(idx, idx + term.length)) + "</mark>" +
+            escHtml(text.slice(idx + term.length));
+    }
+
+    function applyFilters() {
+        var term   = searchEl.value.toLowerCase();
+        var anyVis = false;
+        _jkIndex   = -1;
+        var secVis = new Map();
+        allSections.forEach(function (s) { secVis.set(s, false); });
+
+        detailMeta.forEach(function (m) {
+            var vis = m.name.indexOf(term) !== -1 && (activeCat === "ALL" || m.cat === activeCat);
+            m.el.style.display = vis ? "" : "none";
+            if (vis) { anyVis = true; if (m.sec) secVis.set(m.sec, true); }
+        });
+
+        allSections.forEach(function (sec) { sec.style.display = secVis.get(sec) ? "" : "none"; });
+        tocLinkNames.forEach(function (el) { highlightMatch(el, term); });
+        noResults.setAttribute("aria-hidden", anyVis ? "true" : "false");
+    }
+
+    searchEl.addEventListener("input", applyFilters);
+
+    filterBtns.forEach(function (btn) {
+        btn.onclick = function () {
+            filterBtns.forEach(function (b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            activeCat = btn.dataset.cat;
+            applyFilters();
+        };
+    });
+
+    // ── Expand / collapse all ───────────────────────────────────────────────
+    document.getElementById("expand-all").onclick = function () {
+        detailMeta.forEach(function (m) {
+            if (m.el.style.display !== "none") {
+                m.el.open = true;
+                window.highlightAll(m.el);
+                window.linkAll(m.el);
+            }
+        });
+    };
+    document.getElementById("collapse-all").onclick = function () {
+        detailMeta.forEach(function (m) { m.el.open = false; });
+    };
+
+    // ── Copy code ───────────────────────────────────────────────────────────
+    window.copyCode = function (btn) {
+        var code = btn.closest("details") && btn.closest("details").querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.textContent).then(function () {
+            var orig = btn.textContent;
+            btn.textContent = "\u2713";
+            btn.classList.add("copied");
+            setTimeout(function () { btn.textContent = orig; btn.classList.remove("copied"); }, 1500);
+        });
+    };
+
+    // ── Sidebar resize — mouse + touch ───────────────────────────────────────
+    (function () {
+        var handle   = document.getElementById("sidebar-resize");
+        var sb       = document.getElementById("sidebar");
+        var dragging = false;
+        var startX, startW;
+        var MIN_W = 160, MAX_W = 420;
+
+        function startDrag(x) {
+            dragging = true; startX = x; startW = sb.offsetWidth;
+            handle.classList.add("dragging");
+            document.body.style.cssText += ";cursor:col-resize;user-select:none";
+        }
+        function moveDrag(x) {
+            if (!dragging) return;
+            var w = Math.min(MAX_W, Math.max(MIN_W, startW + (x - startX)));
+            sb.style.width = sb.style.minWidth = w + "px";
+            localStorage.setItem("sidebar-width", w);
+        }
+        function endDrag() {
+            if (!dragging) return;
+            dragging = false;
+            handle.classList.remove("dragging");
+            document.body.style.cursor = document.body.style.userSelect = "";
+        }
+
+        handle.addEventListener("mousedown",   function (e) { startDrag(e.clientX); });
+        document.addEventListener("mousemove", function (e) { moveDrag(e.clientX); });
+        document.addEventListener("mouseup",   endDrag);
+        handle.addEventListener("touchstart",  function (e) { startDrag(e.touches[0].clientX); e.preventDefault(); }, { passive: false });
+        document.addEventListener("touchmove", function (e) { if (dragging) { moveDrag(e.touches[0].clientX); e.preventDefault(); } }, { passive: false });
+        document.addEventListener("touchend",  endDrag);
+
+        var saved = parseInt(localStorage.getItem("sidebar-width"), 10);
+        if (saved >= MIN_W && saved <= MAX_W) sb.style.width = sb.style.minWidth = saved + "px";
+    }());
+});
+</script>
+</body>
+</html>
