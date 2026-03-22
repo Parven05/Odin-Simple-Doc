@@ -52,7 +52,7 @@ Example :
         "template":    "template.html",
         "syntax":      "odin_syntax.json",
         "style_css":   "style.css",
-        "theme_css":   "theme_monokai.css"
+        "theme_css":   "themes/monokai.css"
     },
     "sort_order": {
         "STRUCT": 1,
