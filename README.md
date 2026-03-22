@@ -138,8 +138,6 @@ Change `theme_css` in `config.json` to switch themes:
 - `theme_catppuccin.css`
 - `theme_tokyo_night.css`
 - `theme_dracula.css`
-- `theme_solarized_dark.css`
-- `theme_palenight.css`
 
 To make your own theme, copy any `theme_*.css` and update the CSS variables inside.
 
