@@ -131,29 +131,32 @@ fb_size_callback :: proc(...) {
 
 Change `theme_css` in `config.json` to switch themes:
 
-| File | Style |
-|---|---|
-| `theme_monokai.css` | Classic Monokai, warm high contrast |
-| `theme_one_dark_pro.css` | One Dark Pro, deep navy purple keywords |
-| `theme_github_dark.css` | GitHub Dark, familiar GitHub palette |
-| `theme_gruvbox.css` | Gruvbox, earthy retro warm tones |
-| `theme_catppuccin.css` | Catppuccin Mocha, soft pastel |
-| `theme_tokyo_night.css` | Tokyo Night, neon city deep navy |
-| `theme_dracula.css` | Dracula, pink green purple classic |
+- `theme_monokai.css`
+- `theme_one_dark_pro.css`
+- `theme_github_dark.css`
+- `theme_gruvbox.css`
+- `theme_catppuccin.css`
+- `theme_tokyo_night.css`
+- `theme_dracula.css`
+- `theme_solarized_dark.css`
+- `theme_palenight.css`
 
-To make your own theme, copy any `theme_*.css` and update the CSS variables inside. The variable names are documented in each file.
+To make your own theme, copy any `theme_*.css` and update the CSS variables inside.
 
 ## Features
 
-- **Search** — filters by name in real time, sidebar updates in sync
-- **Type filters** — STRUCT / ENUM / PROC / UNION buttons in the toolbar
-- **Params bar** — param names and types are colour-coded separately
-- **Used-by links** — shows which other symbols reference a given symbol
-- **Sidebar TOC** — collapsible per-file groups with type icons, drag the edge to resize
-- **Syntax highlighting** — Odin-aware, rebuilt from `odin_syntax.json` each run
-- **Copy button** — one-click copy on every code block
-- **Expand / Collapse all** — toolbar buttons to open or close everything at once
-- **Responsive** — sidebar hides on narrow screens
+| Feature | Description |
+|---|---|
+| Search | Filters by name in real time, sidebar updates in sync |
+| Type filters | STRUCT / ENUM / PROC / UNION buttons in the toolbar |
+| Params bar | Param names and types are colour-coded separately |
+| Doc comments | `//` or `/* */` directly above a declaration becomes readable description text |
+| Used-by links | Shows which other symbols reference a given symbol |
+| Sidebar TOC | Collapsible per-file groups with type icons, drag the edge to resize |
+| Syntax highlighting | Odin-aware, rebuilt from `odin_syntax.json` each run |
+| Copy button | One-click copy on every code block |
+| Expand / Collapse all | Toolbar buttons to open or close everything at once |
+| Responsive | Sidebar hides on narrow screens |
 
 ## Extending the Syntax
 
@@ -176,8 +179,6 @@ Run this after any source change. Output is always a single `index.html`.
 
 ## Real Usage
 
-| Docs |
-|---|
-| [parven05.github.io/Silicon](https://parven05.github.io/Silicon/) |
+[Silicon](https://parven05.github.io/Silicon/)
 
-Using odin-docgen for your own project ? Open a PR or issue to add your site to this list.
+If you use this tool, feel free to open a PR or issue to add your site here.
