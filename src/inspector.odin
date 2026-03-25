@@ -136,7 +136,17 @@ process_node :: proc(node: ^odin_ast.Node) {
 			}
 
 			fmt.printf("  has body: %v\n", proc_lit.body != nil)
-			fmt.printf("  inlining: %v\n", proc_lit.inlining)
+
+			// inline check
+			switch proc_lit.inlining {
+			case .None:
+				fmt.printf("  inlining: none\n")
+			case .Inline:
+				fmt.printf("  inlining: force_inline\n")
+			case .No_Inline:
+				fmt.printf("  inlining: force_no_inline\n")
+			}
+
 			if proc_lit.where_clauses != nil {
 				fmt.printf("  has where clauses: true\n")
 			}
