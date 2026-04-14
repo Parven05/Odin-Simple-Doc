@@ -8,47 +8,43 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 :root {
-      --bg: #1b1b1b;
-      --bg2: #141414;
-      --bg3: #242424;
+  --bg:          #1c1d18;
+  --bg2:         #16170f;
+  --bg3:         #222318;
+  --card:        #23241a;
+  --card-hover:  #282920;
+  --border:      #2e2f24;
+  --border2:     #3a3b2e;
+  --border3:     #454637;
+  --text:        #e8e6d9;
+  --text-dim:    #9a9880;
+  --text-faint:  #5c5a48;
+  --accent:      #f92672;
+  --accent2:     #fd971f;
 
-      --card: #202020;
-      --card-hover: #282828;
+  --sb-bg:       #131410;
+  --sb-border:   #252619;
+  --sb-hover:    #1e1f16;
+  --sb-text:     #c8c6b4;
 
-      --border: #303030;
-      --border2: #3a3a3a;
-      --border3: #454545;
+  --file-line:   #3a3b2e;
 
-      --text: #abb2bf;
-      --text-dim: #828997;
-      --text-faint: #5c6370;
+  /* syntax */
+  --kw:          #f92672;
+  --ty:          #66d9ef;
+  --bi:          #a6e22e;
+  --num:         #ae81ff;
+  --str:         #e6db74;
+  --cm:          #6a6854;
+  --br:          #c8c6b4;
+  --op:          #6e6d5a;
+  --ident:       #e8e6d9;
 
-      --accent: #61afef;
-      --accent2: #4b7fd1;
-
-      --sb-bg: #141414;
-      --sb-border: #1b1b1b;
-      --sb-hover: #212121;
-      --sb-text: #9da5b4;
-
-      --kw: #c678dd;
-      --ty: #e5c07b;
-      --bi: #61afef;
-      --num: #d19a66;
-      --str: #98c379;
-      --cm: #5c6370;
-      --br: #abb2bf;
-      --op: #56b6c2;
-      --ident: #e06c75;
-
-      --proc-bg: #2e2a1a;
-      --proc-fg: #ffc66d;
-      --struct-bg: #1a242e;
-      --struct-fg: #61afef;
-      --enum-bg: #1a2e1f;
-      --enum-fg: #98c379;
-      --union-bg: #281a2e;
-      --union-fg: #b38df7;
+  /* badges */
+  --proc-bg:     #2c2416;   --proc-fg:   #fd971f;
+  --struct-bg:   #172514;   --struct-fg: #a6e22e;
+  --enum-bg:     #121826;   --enum-fg:   #66d9ef;
+  --union-bg:    #22132a;   --union-fg:  #ae81ff;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -61,6 +57,15 @@ body {
   font-size: 14px;
   display: flex;
   overflow: hidden;
+}
+
+.odin-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--accent); /* This uses your blue accent color */
+  stroke-width: 2;
+  flex-shrink: 0;
 }
 
 /* ════════════════════════════════════════
